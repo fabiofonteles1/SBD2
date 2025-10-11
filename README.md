@@ -9,9 +9,9 @@ Este projeto implementa um Data Lakehouse completo com arquitetura em camadas (B
 │   BRONZE        │    │   SILVER        │    │   GOLD          │
 │   (Raw Data)    │───▶│   (Processed)   │───▶│   (Analytics)   │
 │                 │    │                 │    │                 │
-│ • train.csv     │    │ • PostgreSQL    │    │ • Aggregations  │
+│ • train.csv     │    │ • PostgreSQL    │    │ • Agragação  │
 │ • Raw format    │    │ • Clean data    │    │ • Reports       │
-│ • No treatment │    │ • Validated     │    │ • Insights      │
+│ • Sem Tratamento │    │ • Validado    │    │ • Insights      │
 └─────────────────┘    └─────────────────┘    └─────────────────┘
 ```
 
@@ -156,13 +156,6 @@ PGADMIN_PASSWORD=admin123
 - Qualidade dos dados
 - Performance do banco
 
-## 🤝 Contribuição
-
-1. Fork o projeto
-2. Crie uma branch (`git checkout -b feature/nova-funcionalidade`)
-3. Commit suas mudanças (`git commit -am 'Adiciona nova funcionalidade'`)
-4. Push para a branch (`git push origin feature/nova-funcionalidade`)
-5. Abra um Pull Request
 
 ## 📝 Licença
 
@@ -174,13 +167,5 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para de
 - **Data**: 10/10/2025
 - **Versão**: 1.0.0
 
-## 📞 Suporte
-
-Para dúvidas ou problemas:
-1. Verifique a documentação
-2. Consulte os logs
-3. Abra uma issue no repositório
-
----
 
 **Data Lakehouse SBD-2** - Transformando dados brutos em insights valiosos! 🚀
