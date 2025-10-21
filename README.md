@@ -1,171 +1,90 @@
-# Data Lakehouse - SBD-2
+# Análise de Dados - Microsoft Security Incident Prediction
 
-Este projeto implementa um Data Lakehouse completo com arquitetura em camadas (Bronze, Silver, Gold) para processamento e análise de dados.
+Este projeto contém uma análise exploratória de dados do dataset da competição Microsoft Security Incident Prediction do Kaggle.
 
-## 🏗️ Arquitetura
+## 📋 Pré-requisitos
 
-```
-┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│   BRONZE        │    │   SILVER        │    │   GOLD          │
-│   (Raw Data)    │───▶│   (Processed)   │───▶│   (Analytics)   │
-│                 │    │                 │    │                 │
-│ • train.csv     │    │ • PostgreSQL    │    │ • Agragação  │
-│ • Raw format    │    │ • Clean data    │    │ • Reports       │
-│ • Sem Tratamento │    │ • Validado    │    │ • Insights      │
-└─────────────────┘    └─────────────────┘    └─────────────────┘
-```
+- Python 3.13
+- pip (gerenciador de pacotes Python)
+
+## 🚀 Instalação
+
+1. **Clone ou baixe este repositório**
+
+2. **Crie um ambiente virtual (recomendado):**
+   ```bash
+   python -m venv venv
+   ```
+
+3. **Ative o ambiente virtual:**
+   
+   **Windows:**
+   ```bash
+   venv\Scripts\activate
+   ```
+   
+   **Linux/Mac:**
+   ```bash
+   source venv/bin/activate
+   ```
+
+4. **Instale as dependências:**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+## 📊 Como executar
+
+1. **Inicie o Jupyter Notebook:**
+   ```bash
+   jupyter notebook
+   ```
+
+2. **Abra o arquivo `raw/train_analytics.ipynb`**
+
+3. **Execute as células sequencialmente**
 
 ## 📁 Estrutura do Projeto
 
 ```
-sbd-2/
-├── 📁 docker/              # Configurações Docker
-│   ├── docker-compose.yml   # Orquestração de containers
-│   └── init.sql            # Scripts de inicialização
-├── 📁 docs/                 # Documentação
-│   ├── README.md           # Documentação principal
-│   ├── modelagem_silver.md # Modelagem da camada Silver
-│   └── dicionario_dados_bronze.md # Dicionário de dados
-├── 📁 notebooks/            # Jupyter Notebooks
-│   ├── 01_data_exploration.ipynb      # Análise Bronze
-│   ├── 02_etl_raw_to_silver.ipynb    # ETL Process
-│   └── 03_lakehouse_validation.ipynb  # Validação
-├── 📁 raw/                  # Dados brutos (Bronze)
-│   └── train.csv           # Dataset principal
-├── 📁 scripts/              # Scripts de automação
-│   ├── run_etl.py          # ETL principal
-│   ├── run_automation.py   # Automação completa
-│   └── requirements.txt    # Dependências Python
-├── 📁 silver/               # Dados processados (Silver)
-├── 📁 gold/                 # Dados analíticos (Gold)
-├── setup.py                # Script de configuração
-└── README.md               # Este arquivo
+sbd2/
+├── raw/
+│   ├── train.csv                 # Dataset principal
+│   ├── train_analytics.ipynb     # Notebook de análise
+│   └── Dicionário_de_Dados_train.csv.md  # Documentação dos dados
+├── requirements.txt              # Dependências do projeto
+└── README.md                     # Este arquivo
 ```
 
-## 🚀 Início Rápido
+## 📚 Bibliotecas Principais Utilizadas
 
-### 1. Configuração Inicial
+- **pandas**: Manipulação e análise de dados
+- **numpy**: Computação numérica
+- **matplotlib**: Visualização de dados
+- **seaborn**: Visualizações estatísticas avançadas
+- **jupyter**: Ambiente de notebook interativo
 
-```bash
-# Clone o repositório (se aplicável)
-git clone <repository-url>
-cd sbd-2
+## ⚠️ Observações Importantes
 
-# Execute o setup
-python setup.py
-```
+- O dataset `train.csv` deve estar presente na pasta `raw/` para que o notebook funcione corretamente
+- O dataset é grande e pode consumir bastante memória RAM
+- Certifique-se de ter pelo menos 8GB de RAM disponível para uma execução fluida
 
-### 2. Executar Automação Completa
+## 🐛 Solução de Problemas
 
-```bash
-# Inicia Docker, cria banco, executa ETL
-python scripts/run_automation.py
-```
+### Erro de memória:
+Se você encontrar problemas de memória, considere:
+- Usar um subset menor dos dados para testes
+- Fechar outras aplicações que consomem muita RAM
+- Usar `low_memory=False` no `pd.read_csv()` (já configurado)
 
-### 3. Acessar Recursos
+### Problemas com encoding:
+Se houver problemas com caracteres especiais, certifique-se de que o arquivo CSV está em UTF-8.
 
-- **Jupyter Notebooks**: `jupyter notebook notebooks/`
-- **pgAdmin**: http://localhost:8080
-- **Banco de Dados**: localhost:5432
+## 📈 Próximos Passos
 
-## 📊 Camadas de Dados
-
-### Bronze (Raw)
-- **Localização**: `raw/`
-- **Conteúdo**: Dados brutos sem tratamento
-- **Formato**: CSV, JSON, etc.
-- **Tamanho**: ~2.4 GB
-
-### Silver (Processed)
-- **Localização**: `silver/` + PostgreSQL
-- **Conteúdo**: Dados limpos e estruturados
-- **Formato**: PostgreSQL, Parquet
-- **Qualidade**: Validada e normalizada
-
-### Gold (Analytics)
-- **Localização**: `gold/`
-- **Conteúdo**: Dados agregados para análise
-- **Formato**: Parquet, Delta Lake
-- **Uso**: Relatórios e insights
-
-## 🛠️ Tecnologias
-
-- **Python**: Pandas, SQLAlchemy, Psycopg2
-- **Banco de Dados**: PostgreSQL 15
-- **Containerização**: Docker, Docker Compose
-- **Visualização**: Jupyter Notebooks, Matplotlib, Seaborn
-- **Orquestração**: Scripts Python personalizados
-
-## 📋 Funcionalidades
-
-### ✅ Implementado
-- [x] Estrutura de pastas base
-- [x] Configuração Docker com PostgreSQL
-- [x] Scripts de automação
-- [x] Notebooks de análise
-- [x] Documentação completa
-- [x] Dicionário de dados Bronze
-- [x] Modelagem Silver
-- [x] ETL Raw → Silver
-- [x] Validação do Lakehouse
-
-### 🔄 Em Desenvolvimento
-- [ ] Camada Gold
-- [ ] Dashboards interativos
-- [ ] Monitoramento avançado
-- [ ] Backup e recuperação
-
-## 📖 Documentação
-
-- [Modelagem Silver](docs/modelagem_silver.md)
-- [Dicionário de Dados Bronze](docs/dicionario_dados_bronze.md)
-- [Configuração Docker](docker/)
-
-## 🔧 Configuração
-
-### Requisitos
-- Python 3.8+
-- Docker e Docker Compose
-- 8GB RAM recomendado
-- 10GB espaço em disco
-
-### Variáveis de Ambiente
-```bash
-# Banco de Dados
-DB_HOST=localhost
-DB_PORT=5432
-DB_NAME=sbd2_lakehouse
-DB_USER=sbd2_user
-DB_PASSWORD=sbd2_password
-
-# pgAdmin
-PGADMIN_EMAIL=admin@sbd2.com
-PGADMIN_PASSWORD=admin123
-```
-
-## 📊 Monitoramento
-
-### Logs
-- **Automação**: `automation.log`
-- **ETL**: `etl.log`
-- **Docker**: `docker logs sbd2_postgres`
-
-### Métricas
-- Registros processados
-- Tempo de execução
-- Qualidade dos dados
-- Performance do banco
-
-
-## 📝 Licença
-
-Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para detalhes.
-
-## 👥 Equipe
-
-- **Desenvolvedor**: Equipe SBD-2
-- **Data**: 10/10/2025
-- **Versão**: 1.0.0
-
-
-**Data Lakehouse SBD-2** - Transformando dados brutos em insights valiosos! 🚀
+Este notebook contém apenas a análise exploratória inicial. Os próximos passos incluem:
+- Limpeza e tratamento de dados ausentes
+- Engenharia de features
+- Modelagem de Machine Learning
+- Avaliação e otimização de modelos
