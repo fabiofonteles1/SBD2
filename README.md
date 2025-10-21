@@ -48,11 +48,24 @@ Este projeto contém uma análise exploratória de dados do dataset da competiç
 
 ```
 sbd2/
+├── silver/
+│   ├── security_analytics.ipynb     # Notebook de análise
+│   └── Dicionário_de_Dados_silver.md  # Documentação dos dados
+│   ├── mer-der-dld-dicionario-silver     # Documentação do Banco de Dados
+│   └── security_analytics.md  # Explicação da Análise em markdown
+│   ├── security_ddl     # Arquivo com a criação da tabela
+│   └── security_der_dld # Diagrama entidade relacionamento e dld
+│   ├── security_incident_prediction_silver.csv     # Arquivo csv da camada silver ( já com tratamento)
 ├── raw/
 │   ├── train.csv                 # Dataset principal
 │   ├── train_analytics.ipynb     # Notebook de análise
 │   └── Dicionário_de_Dados_train.csv.md  # Documentação dos dados
+├── transformer/
+│   ├── etl/
+│   ├── ETL_Security_Incident_Prediction.md # arquivo explicativo
+│   ├── raw_to_silver_security.ipynb # Notebook Jupyter que executa o etl raw to silver
 ├── requirements.txt              # Dependências do projeto
+├── docker-compose              # Docker Compose do Projeto
 └── README.md                     # Este arquivo
 ```
 
