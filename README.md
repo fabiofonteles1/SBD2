@@ -69,6 +69,7 @@ sbd2/
 - O dataset `train.csv` deve estar presente na pasta `raw/` para que o notebook funcione corretamente
 - O dataset é grande e pode consumir bastante memória RAM
 - Certifique-se de ter pelo menos 8GB de RAM disponível para uma execução fluida
+- Caso de problema no arquivo csv, baixe diretamente do site: https://www.kaggle.com/datasets/Microsoft/microsoft-security-incident-prediction , o utilizado na análise e o GUIDE.train.csv
 
 ## 🐛 Solução de Problemas
 
