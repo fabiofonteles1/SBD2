@@ -94,11 +94,3 @@ Se você encontrar problemas de memória, considere:
 
 ### Problemas com encoding:
 Se houver problemas com caracteres especiais, certifique-se de que o arquivo CSV está em UTF-8.
-
-## 📈 Próximos Passos
-
-Este notebook contém apenas a análise exploratória inicial. Os próximos passos incluem:
-- Limpeza e tratamento de dados ausentes
-- Engenharia de features
-- Modelagem de Machine Learning
-- Avaliação e otimização de modelos
