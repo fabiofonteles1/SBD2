@@ -316,10 +316,3 @@ O dataset da camada Silver contém dados processados e limpos do Microsoft Secur
 
 ---
 
-
----
-
-**Data de Atualização**: Dezembro de 2024  
-**Versão**: 1.0  
-**Responsável**: Sistema de Análise de Dados  
-**Próxima Revisão**: Janeiro de 2025
