@@ -5,7 +5,7 @@
 
 **Dataset**: Microsoft Security Incident Prediction - Silver Layer  
 **Versão**: 1.0  
-**Data de Criação**: Dezembro de 2024  
+**Data de Criação**: Outubro de 2025  
 **Fonte**: Dataset processado da camada Raw após ETL  
 **Total de Registros**: 9,516,837  
 **Total de Colunas**: 37  
@@ -313,23 +313,9 @@ O dataset da camada Silver contém dados processados e limpos do Microsoft Secur
 ### Considerações para Análise
 1. **Balanceamento**: Necessário para modelagem adequada
 2. **Validação**: Usar validação estratificada
-3. **Métricas**: Considerar precision, recall e F1-score
 
 ---
 
-## Próximos Passos
-
-### Melhorias Sugeridas
-1. **Feature Engineering**: Criar features derivadas temporais
-2. **Balanceamento**: Aplicar técnicas de oversampling/undersampling
-3. **Validação**: Implementar validação cruzada estratificada
-4. **Modelagem**: Testar múltiplos algoritmos de classificação
-
-### Aplicações Futuras
-1. **Sistema de Detecção**: Implementar detecção em tempo real
-2. **Dashboard**: Criar interface de monitoramento
-3. **Alertas**: Sistema de alertas inteligentes
-4. **Análise Preditiva**: Modelos de predição de riscos
 
 ---
 
