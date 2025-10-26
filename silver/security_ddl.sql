@@ -1,4 +1,5 @@
-CREATE SCHEMA IF NOT EXISTS silver AUTHORIZATION postgres;
+CREATE SCHEMA IF NOT EXISTS silver;
+DROP TABLE IF EXISTS silver.microsoft_security_incident;
 CREATE TABLE silver.microsoft_security_incident (
     -- Identificadores
     id BIGINT PRIMARY KEY,
