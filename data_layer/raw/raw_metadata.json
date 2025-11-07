@@ -1,0 +1,15 @@
+{
+  "timestamp_analysis": "2025-11-07T00:49:13.790171",
+  "data_source": "Kaggle - Microsoft Security Incident Prediction",
+  "dataset_period": "June 2024",
+  "total_records": 9516837,
+  "total_columns": 45,
+  "memory_mb": 7300.76,
+  "checksum_md5": "115c2d188e80826d9fbdb9c8784afa22",
+  "categorical_columns": 13,
+  "numerical_columns": 31,
+  "duplicates_count": 22559,
+  "columns_with_missing": 11,
+  "columns_with_missing_critical": 7,
+  "outliers_detected": 29
+}

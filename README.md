@@ -48,24 +48,11 @@ Este projeto contém uma análise exploratória de dados do dataset da competiç
 
 ```
 sbd2/
-├── silver/
-│   ├── security_analytics.ipynb     # Notebook de análise
-│   └── Dicionário_de_Dados_silver.md  # Documentação dos dados
-│   └── security_analytics.md  # Explicação da Análise em markdown
-│   ├── security_ddl     # Arquivo com a criação da tabela
-│   └── security_der_dld # Diagrama entidade relacionamento e dld
-│   ├── security_incident_prediction_silver.csv     # Arquivo csv da camada silver ( já com tratamento)
 ├── raw/
 │   ├── train.csv                 # Dataset principal
 │   ├── train_analytics.ipynb     # Notebook de análise
 │   └── Dicionário_de_Dados_train.csv.md  # Documentação dos dados
-│   └── Dicionário_de_Dados_train.pdf  # Documentação dos dados em pdf
-├── transformer/
-│   ├── etl/
-│   ├── ETL_Security_Incident_Prediction.md # arquivo explicativo
-│   ├── raw_to_silver_security.ipynb # Notebook Jupyter que executa o etl raw to silver
 ├── requirements.txt              # Dependências do projeto
-├── docker-compose              # Docker Compose do Projeto
 └── README.md                     # Este arquivo
 ```
 
@@ -82,7 +69,6 @@ sbd2/
 - O dataset `train.csv` deve estar presente na pasta `raw/` para que o notebook funcione corretamente
 - O dataset é grande e pode consumir bastante memória RAM
 - Certifique-se de ter pelo menos 8GB de RAM disponível para uma execução fluida
-- Caso de problema no arquivo csv, baixe diretamente do site: https://www.kaggle.com/datasets/Microsoft/microsoft-security-incident-prediction , o utilizado na análise e o GUIDE.train.csv
 
 ## 🐛 Solução de Problemas
 
@@ -94,3 +80,11 @@ Se você encontrar problemas de memória, considere:
 
 ### Problemas com encoding:
 Se houver problemas com caracteres especiais, certifique-se de que o arquivo CSV está em UTF-8.
+
+## 📈 Próximos Passos
+
+Este notebook contém apenas a análise exploratória inicial. Os próximos passos incluem:
+- Limpeza e tratamento de dados ausentes
+- Engenharia de features
+- Modelagem de Machine Learning
+- Avaliação e otimização de modelos

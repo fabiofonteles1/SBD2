@@ -13,7 +13,7 @@ Este documento descreve o processo ETL (Extract, Transform, Load) implementado p
 
 ### Estrutura de Pastas
 ```
-sbd2/
+sbd2/data_layer/
 ├── raw/                           # Camada Raw (Bronze)
 │   ├── train.csv                  # Dataset original
 │   └── Dicionario_Dados_Security_Incident.md
@@ -174,7 +174,7 @@ print(f"Dimensões do dataset: {df.shape}")
 
 ### Requisitos de Sistema
 - **RAM**: Mínimo 8GB recomendado
-- **Python**: 3.8+
+- **Python**: 3.13
 - **Bibliotecas**: pandas, numpy, scikit-learn
 
 ### Otimizações
